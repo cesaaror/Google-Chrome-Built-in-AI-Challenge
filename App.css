@@ -1,0 +1,236 @@
+/* General Styles */
+.App {
+  text-align: center;
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: linear-gradient(to bottom, #f3f4f6, #e2e4e8);
+  color: #333;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden; /* Evita el scroll horizontal */
+}
+
+/* Header */
+.App-header {
+  background: linear-gradient(90deg, #005a9e, #0078d4);
+  color: white;
+  padding: 1.5rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  animation: fadeInDown 0.8s ease-out; /* Animación */
+}
+
+.App-header h1 {
+  margin: 0;
+  font-size: 2.8rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Navigation */
+nav {
+  margin: 1rem 0;
+}
+
+nav button {
+  background-color: white;
+  color: #0078d4;
+  border: 2px solid #0078d4;
+  border-radius: 25px;
+  margin: 0 0.5rem;
+  padding: 0.6rem 1.5rem;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+nav button.active {
+  background-color: #0078d4;
+  color: white;
+  box-shadow: 0 4px 10px rgba(0, 120, 212, 0.5);
+  transform: scale(1.1); /* Escala el botón activo */
+}
+
+nav button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 3px 8px rgba(0, 120, 212, 0.3);
+}
+
+/* Main Content */
+main {
+  flex: 1;
+  padding: 2rem;
+  animation: fadeIn 0.8s ease; /* Animación */
+}
+
+textarea {
+  width: 80%;
+  max-width: 700px;
+  padding: 1rem;
+  margin: 1rem 0;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  resize: vertical;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+textarea:focus {
+  outline: none;
+  border-color: #0078d4;
+  box-shadow: 0 0 10px rgba(0, 120, 212, 0.5);
+}
+
+/* Buttons */
+button {
+  background-color: #0078d4;
+  color: white;
+  border: none;
+  padding: 0.75rem 2rem;
+  margin: 1rem 0;
+  font-size: 1rem;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  background-color: #005a9e;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+}
+
+button:disabled {
+  background-color: #ccc;
+  color: #666;
+  cursor: not-allowed;
+}
+
+/* Translation Result */
+div h3 {
+  color: #0078d4;
+  margin-top: 1rem;
+}
+
+div p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  margin: 1rem 0;
+}
+
+/* Footer */
+footer {
+  padding: 1rem;
+  font-size: 0.9rem;
+  color: #666;
+  background-color: #e9ecef;
+  border-top: 1px solid #ddd;
+  box-shadow: 0 -1px 5px rgba(0, 0, 0, 0.1);
+  animation: fadeInUp 0.8s ease;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .App-header h1 {
+    font-size: 2rem;
+  }
+
+  textarea {
+    width: 90%;
+    font-size: 0.9rem;
+  }
+
+  nav button {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .App-header h1 {
+    font-size: 1.5rem;
+  }
+
+  nav button {
+    width: 100%;
+    margin: 0.5rem 0;
+  }
+
+  textarea {
+    width: 100%;
+  }
+}
+
+/* Botones de Traducción Rápida */
+.translation-buttons button {
+  background-color: #0078d4;
+  color: white;
+  border: 2px solid transparent;
+  padding: 0.75rem 1.5rem;
+  margin: 0.5rem;
+  font-size: 1rem;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.translation-buttons button:hover {
+  background-color: #005a9e;
+  border-color: #003a6b;
+  transform: scale(1.1);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.translation-buttons button:active {
+  background-color: #004080;
+  transform: scale(1.05);
+}
+
+.translation-buttons button:disabled {
+  background-color: #ccc;
+  color: #666;
+  border-color: #aaa;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+/* Animación al hacer clic */
+.translation-buttons button:focus-visible {
+  outline: 2px solid #ffa500;
+  outline-offset: 2px;
+}
